@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+  <item android:id="@+id/menu_stats" android:title="Stats"  android:iconTint="@color/white"   app:showAsAction="always" android:icon="@drawable/stats1_svgrepo_com"/>
+  <item android:id="@+id/menu_charging" android:title="Charging"  android:iconTint="@color/white"   app:showAsAction="always" android:icon="@drawable/battery_charging_svgrepo_com"/>
+  <item android:id="@+id/menu_property" android:title="Properties" android:iconTint="@color/white"  app:showAsAction="always" android:icon="@drawable/layer_group_svgrepo_com"/>
+  <item android:id="@+id/menu_setting" android:title="Settings" android:iconTint="@color/white" app:showAsAction="always" android:icon="@drawable/setting_5_svgrepo_com" />
+
+</menu>

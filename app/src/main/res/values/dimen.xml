@@ -1,0 +1,4 @@
+<resources>
+    <dimen name="app_name_size">24sp</dimen>
+    <dimen name="tagline_size">16sp</dimen>
+</resources>

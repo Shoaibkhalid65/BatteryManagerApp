@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/charging_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/baseline_arrow_back_ios_new_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <RelativeLayout
+        android:id="@+id/rlt_layout"
+        app:layout_constraintTop_toBottomOf="@id/charging_top_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+        <ProgressBar
+            android:id="@+id/circularProgressBar"
+            style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Horizontal"
+            android:layout_width="200dp"
+            android:layout_height="180dp"
+            android:indeterminate="false"
+            android:progressDrawable="@drawable/custom_progress" />
+        <TextView
+            android:id="@+id/progressText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="20%"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:textSize="38sp"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/tv_charging_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Disconnected"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/rlt_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <androidx.cardview.widget.CardView
+        android:layout_height="265dp"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_charging_status"
+        android:layout_marginTop="20dp"
+        android:id="@+id/fragment"
+        style="@style/cardTheme"
+        app:cardBackgroundColor="@color/white"
+        app:cardElevation="2dp"
+        app:cardMaxElevation="2dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true"
+        app:contentPadding="5dp"
+        app:contentPaddingBottom="0dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:id="@+id/batteryTemp"
+                style="@style/smallerCardLinearLayoutTheme">
+
+                <ImageView
+                    android:id="@+id/batteryTemp_Icon"
+                    style="@style/cardIconTheme"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/smart_phone_iphone_plugged_svgrepo_com" />
+
+                <TextView
+                    android:id="@+id/batteryTemp_Text"
+                    style="@style/cardItemDisabledTheme"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="36dp"
+                    android:text="Plugged" />
+
+                <TextView
+                    android:id="@+id/tv_plugged"
+                    style="@style/cardItemDisabledTheme"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="USB" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey"></View>
+
+            <RelativeLayout
+                android:id="@+id/batteryVoltage"
+                style="@style/smallerCardLinearLayoutTheme">
+
+                <ImageView
+                    android:id="@+id/batteryVoltage_Icon"
+                    style="@style/cardIconTheme"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/time_filled_svgrepo_com" />
+
+                <TextView
+                    android:id="@+id/batteryVoltage_Text"
+                    style="@style/cardItemDisabledTheme"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginLeft="36dp"
+                    android:layout_marginStart="36dp"
+                    android:text="Charge Time Remaining" />
+
+                <TextView
+                    android:id="@+id/tv_charge_time_remaining"
+                    style="@style/cardItemDisabledTheme"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="1 ms" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey"></View>
+
+            <RelativeLayout
+                android:id="@+id/batteryHealth"
+                style="@style/smallerCardLinearLayoutTheme">
+
+                <ImageView
+                    android:id="@+id/icon"
+                    style="@style/cardIconTheme"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/battery_low_svgrepo_com" />
+
+                <TextView
+                    android:id="@+id/batteryHealth_Text"
+                    style="@style/cardItemDisabledTheme"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginLeft="36dp"
+                    android:layout_marginStart="36dp"
+                    android:text="Battery Low" />
+
+                <TextView
+                    android:id="@+id/tv_battery_low"
+                    style="@style/cardItemDisabledTheme"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="false" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey"></View>
+
+            <RelativeLayout
+                android:id="@+id/batteryTech"
+                style="@style/smallerCardLinearLayoutTheme">
+
+                <ImageView
+                    android:id="@+id/batteryTech_Icon"
+                    style="@style/cardIconTheme"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/battery_with_full_charge_svgrepo_com" />
+
+                <TextView
+                    android:id="@+id/batteryTech_Text"
+                    style="@style/cardItemDisabledTheme"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginLeft="36dp"
+                    android:layout_marginStart="36dp"
+                    android:text="Charge Scale" />
+
+                <TextView
+                    android:id="@+id/tv_charge_scale"
+                    style="@style/cardItemDisabledTheme"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="100" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grey"></View>
+
+            <RelativeLayout
+                android:id="@+id/batteryPlugged"
+                style="@style/smallerCardLinearLayoutTheme">
+
+                <ImageView
+                    android:id="@+id/batteryPlugged_Icon"
+                    style="@style/cardIconTheme"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_usb" />
+
+                <TextView
+                    android:id="@+id/batteryPlugged_text"
+                    style="@style/cardItemDisabledTheme"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginLeft="36dp"
+                    android:layout_marginStart="36dp"
+                    android:text="Charge Status" />
+
+                <TextView
+                    android:id="@+id/tv_charge_status"
+                    style="@style/cardItemDisabledTheme"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="Not Charging" />
+            </RelativeLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="340dp"
+        android:layout_height="70dp"
+        app:layout_constraintTop_toBottomOf="@id/fragment"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:cardElevation="16dp"
+        android:layout_marginTop="20sp"
+        android:backgroundTint="@color/card_background">
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_power_usage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="View Power Usage Summary"
+            android:clickable="true"
+            android:focusable="true"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:fontFamily="@font/font_med"
+            android:background="?selectableItemBackground"/>
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
